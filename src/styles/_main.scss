@@ -569,6 +569,36 @@ h3 {
   }
 }
 
+.section13 {
+  background: $primary;
+  color: white;
+
+  .container {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+  .row {
+    max-width: 800px;
+    margin: auto;
+  }
+
+  a {
+    max-width: 52px;
+    display: block;
+    margin: auto;
+  }
+
+  .col {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+   
+    width: 100%;
+  }
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1330px;

@@ -1,0 +1,42 @@
+.footer {
+  background: $brand-black;
+  .logo {
+    display: block;
+
+    img {
+      width: 32px;
+    }
+  }
+
+  .container {
+    padding-top: 80px;
+    padding-bottom: 80px;
+  }
+}
+
+.menu-footer {
+  list-style: none;
+  margin-left: 0;
+  padding-left: 0;
+  a {
+    color: white;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    padding: 8px 0;
+    text-decoration: none;
+    display: inline-block;
+
+    &:hover,
+    &:focus {
+      opacity: .8;
+      color: white;
+    }
+  }
+}
+
+.copy {
+  color: #888888;
+  font-size: 16px;
+  text-align: right;
+}
