@@ -63,7 +63,7 @@ body {
 
 .baner1 {
   padding-bottom: 60px;
-  background: url($imgpath + 'baner1.png') no-repeat center,
+  background: url($imgpath + 'baner1.png') no-repeat center / cover,
     linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
   .container {
     text-align: center;
@@ -515,7 +515,7 @@ h3 {
 .roadmap {
   background: url($imgsvg + 'roadmap-bg.svg') no-repeat center;
   background-size: 2156px 1950px;
-    background-position: -130px 20px;
+  background-position: -130px 20px;
 }
 
 .roadmap-list {
@@ -594,13 +594,371 @@ h3 {
   }
 
   img {
-   
     width: 100%;
+  }
+}
+
+.runtoken {
+  display: block;
+  max-width: 80px;
+  margin: auto;
+  margin-bottom: 40px;
+
+  img {
+    display: block;
+    margin: auto;
+    max-width: 100%;
   }
 }
 
 @media (min-width: 1200px) {
   .container {
     max-width: 1330px;
+  }
+}
+
+@media (min-width: 768px) {
+  .btn-burger {
+    display: none;
+  }
+  .menu-burger {
+    display: none;
+  }
+  .roadmap-content {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  
+
+  .circlebox {
+    max-width: 100%;
+    width: 100%;
+    background: none;
+  }
+
+  .circler {
+    position: static;
+    width: 396px;
+    height: 396px;
+    margin: auto;
+    padding-left: 40px;
+    padding-right: 40px;
+    margin-bottom: 60px;
+
+    &__img {
+      height: 58px;
+
+      img {
+        max-height: 100%;
+      }
+    }
+
+    &__head {
+      font-size: 32px;
+    }
+
+    &__text {
+      font-size: 17px;
+    }
+  }
+
+  .header {
+    .menu,
+    .widget {
+      display: none;
+    }
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+
+  .price-list {
+    flex-direction: column;
+  }
+
+  .price-card {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .piplebox {
+    .row {
+      flex-direction: column;
+
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+
+    .col {
+      margin-bottom: 40px;
+    }
+  }
+
+  .roadmap {
+    background: none;
+  }
+
+  .roadmap-list {
+    display: none;
+  }
+
+  .btn-burger {
+    display: block;
+    padding: 10px;
+    background-color: transparent;
+    border: 0;
+    position: absolute;
+    left: 15px;
+
+    &:before {
+      content: '';
+      display: block;
+      width: 24px;
+      height: 12px;
+      background: url($imgsvg + 'btn-burger.svg') no-repeat center;
+      background-size: 100%;
+    }
+  }
+
+  .menu-burger {
+    height: calc(100vh - 70px);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: $primary;
+    z-index: 10;
+    padding: 15px;
+    padding-bottom: 40px;
+    display: none;
+
+    &__content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 85%;
+
+      .menu {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+
+        .menu-item {
+          text-align: center;
+        }
+
+        a {
+          display: inline-block;
+          font-style: normal;
+          font-weight: bold;
+          font-size: 24px;
+          text-align: center;
+          margin-bottom: 44px;
+        }
+      }
+    }
+
+    .widget {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+
+      a {
+        margin-bottom: 40px;
+        max-width: 380px;
+        width: 100%;
+        font-size: 24px;
+        display: block;
+        margin-right: 0;
+      }
+    }
+
+    .lang {
+      select {
+        font-size: 24px;
+        font-weight: bold;
+      }
+    }
+  }
+
+  body.menu-open {
+    overflow-y: scroll;
+
+    .wrapper {
+      display: none;
+    }
+
+    .menu-burger {
+      display: block;
+    }
+
+    .btn-burger {
+      &::before {
+        background-image: url($imgsvg + 'close-white.svg');
+      }
+    }
+  }
+
+  .baner1-head {
+    font-size: 32px;
+  }
+
+  .text-small {
+    font-size: 17px;
+  }
+  .screenshot {
+    &::before {
+      width: 100%;
+      background-image: url($imgpath + 'screen1-mobile.png');
+    }
+  }
+
+  .store-group {
+    padding-top: 15px;
+    flex-direction: column;
+
+    a {
+      margin-bottom: 20px;
+    }
+  }
+
+  .section-header {
+    font-size: 32px;
+  }
+
+  .section4 {
+    padding-bottom: 40px;
+  }
+
+  .transport-list {
+    margin-top: 100px;
+    flex-direction: column-reverse;
+
+    img {
+      margin: 0;
+      margin-bottom: 60px;
+    }
+  }
+
+  .section5 {
+    .container {
+      padding-top: 80px;
+      padding-bottom: 80px;
+    }
+
+    .section-header {
+      margin-bottom: 40px;
+    }
+  }
+
+  .dangerbox {
+    width: 80px;
+    height: 72px;
+    margin-bottom: 40px;
+  }
+
+  .card-list {
+    flex-direction: column;
+  }
+
+  .card-item {
+    padding: 40px 15px;
+    max-width: 100%;
+
+    &:first-child {
+      background: transparent;
+    }
+
+    &__img {
+      height: 80px;
+      margin-bottom: 40px;
+
+      img {
+        max-height: 100%;
+      }
+    }
+
+    &__content {
+      font-style: italic;
+      font-weight: bold;
+      font-size: 32px;
+    }
+  }
+  .roadmap-content{
+    font-size: 17px;
+    font-style: normal;
+    color: black;
+    font-weight: normal;
+  }
+
+  .roadmap-header {
+    background: white;
+    border-radius: 44px;
+    color: $primary;
+    font-size: 32px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 220px;
+    min-height: 190px;
+    margin-bottom: 24px;
+    margin-top: 0 !important;
+  }
+
+  .section11 {
+    background: $brand-gray;
+    padding-bottom: 100px;
+  }
+
+  .section12 {
+    background: white;
+    .row {
+      flex-direction: column;
+    }
+
+    .col {
+      margin-bottom: 20px;
+    }
+
+    img {
+      max-width: 220px;
+      display: block;
+      margin: auto;
+    }
+  }
+}
+
+@media (max-height: 600px) and (max-width: 768px) {
+  .menu-burger {
+    overflow-y: auto;
+
+    &__content {
+      height: auto;
+      .menu {
+        margin-bottom: 40px;
+
+        a {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .circler {
+    width: 100%;
+    height: auto;
+    border-radius: 44px;
   }
 }
