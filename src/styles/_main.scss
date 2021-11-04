@@ -315,6 +315,7 @@ h3.section-header {
   width: 1041px;
   position: relative;
   margin-top: 160px;
+  margin-bottom: 160px;
 }
 
 .circler {
@@ -426,6 +427,11 @@ h3.section-header {
 
   .row {
     margin-bottom: 60px;
+  }
+
+  .col {
+    display: flex;
+    justify-content: center;
   }
 }
 
@@ -614,6 +620,15 @@ h3 {
   }
 }
 
+.piplebox {
+  .row {
+    > div {
+      text-align: center;
+      padding-bottom: 40px;
+    }
+  }
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1330px;
@@ -647,6 +662,7 @@ h3 {
     flex-wrap: wrap;
     justify-content: center;
     min-height: auto;
+    margin-bottom: 20px;
   }
 
   .circler {
@@ -725,6 +741,19 @@ h3 {
 
     .col {
       margin-bottom: 40px;
+    }
+  }
+
+  .h3.section-header, h3.section-header {
+    font-size: 32px;
+  }
+
+  .gray-center {
+    padding: 40px;
+
+    img {
+      max-width: 100%;
+      margin-bottom: 20px;
     }
   }
 
@@ -989,5 +1018,18 @@ h3 {
     width: 100%;
     height: auto;
     border-radius: 44px;
+  }
+
+  .screenshot {
+    &::before {
+      height: 380px;
+      margin-bottom: 40px;
+    }
+  }
+
+  .section10 {
+    .imgbox {
+      height: 320px;
+    }
   }
 }
