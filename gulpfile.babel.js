@@ -20,6 +20,11 @@ const paths = {
     dist: './dist/js/',
     watch: ['./src/blocks/**/*.js', './src/js/**/*.js'],
   },
+
+  animation: {
+    src: './src/js/animation/**/*',
+    dist: './dist/js/'
+  },
   images: {
     src: [
       './src/img/**/*.{jpg,jpeg,png,gif,tiff,svg}',
@@ -54,14 +59,14 @@ export { paths };
 export const development = gulp.series(
   'clean',
   'views',
-  gulp.parallel(['styles', 'scripts', 'images', 'webp', 'fonts', 'favicons']),
+  gulp.parallel(['styles', 'scripts', 'animation', 'images', 'webp', 'fonts', 'favicons']),
   gulp.parallel('serve'),
 );
 
 export const prod = gulp.series(
   'clean',
   'views',
-  gulp.parallel(['styles', 'scripts', 'images', 'webp', 'fonts', 'favicons', 'gzip']),
+  gulp.parallel(['styles', 'scripts', 'animation', 'images', 'webp', 'fonts', 'favicons', 'gzip']),
 );
 
 export default development;

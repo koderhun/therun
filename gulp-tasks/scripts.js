@@ -37,3 +37,10 @@ gulp.task('scripts', () => {
     )
     .on('end', browsersync.reload);
 });
+
+
+gulp.task('animation', ()=> {
+  return gulp
+    .src(paths.animation.src)
+    .pipe(gulp.dest(paths.animation.dist))
+})
