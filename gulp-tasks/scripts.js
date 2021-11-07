@@ -4,8 +4,6 @@ import { paths } from '../gulpfile.babel';
 import webpack from 'webpack';
 import webpackStream from 'webpack-stream';
 import gulp from 'gulp';
-import gulpif from 'gulp-if';
-import rename from 'gulp-rename';
 import browsersync from 'browser-sync';
 import debug from 'gulp-debug';
 import yargs from 'yargs';
@@ -21,14 +19,6 @@ gulp.task('scripts', () => {
   return gulp
     .src(paths.scripts.src)
     .pipe(webpackStream(webpackConfig), webpack)
-    .pipe(
-      gulpif(
-        production,
-        rename({
-          suffix: '.min',
-        }),
-      ),
-    )
     .pipe(gulp.dest(paths.scripts.dist))
     .pipe(
       debug({
@@ -38,9 +28,7 @@ gulp.task('scripts', () => {
     .on('end', browsersync.reload);
 });
 
-
-gulp.task('animation', ()=> {
-  return gulp
-    .src(paths.animation.src)
-    .pipe(gulp.dest(paths.animation.dist))
-})
+gulp.task('copyjs', () => {
+  return gulp.src(paths.copyjs.src)
+  .pipe(gulp.dest(paths.copyjs.dist));
+});

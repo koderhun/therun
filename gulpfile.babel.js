@@ -21,8 +21,8 @@ const paths = {
     watch: ['./src/blocks/**/*.js', './src/js/**/*.js'],
   },
 
-  animation: {
-    src: './src/js/animation/**/*',
+  copyjs: {
+    src: ['./node_modules/lottie-web/build/player/lottie.min.js', './node_modules/lottie-interactive/dist/lottie-interactive.js', './src/js/animation/**/*'],
     dist: './dist/js/'
   },
   images: {
@@ -59,14 +59,14 @@ export { paths };
 export const development = gulp.series(
   'clean',
   'views',
-  gulp.parallel(['styles', 'scripts', 'animation', 'images', 'webp', 'fonts', 'favicons']),
+  gulp.parallel(['styles', 'scripts', 'copyjs', 'images', 'webp', 'fonts', 'favicons']),
   gulp.parallel('serve'),
 );
 
 export const prod = gulp.series(
   'clean',
   'views',
-  gulp.parallel(['styles', 'scripts', 'animation', 'images', 'webp', 'fonts', 'favicons', 'gzip']),
+  gulp.parallel(['styles', 'scripts', 'copyjs', 'images', 'webp', 'fonts', 'favicons', 'gzip']),
 );
 
 export default development;

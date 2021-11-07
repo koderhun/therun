@@ -42,7 +42,6 @@ let secondSlide = false;
 let thirdSlide = false;
 let playerStopped = false;
 
-console.log('an')
 player.addEventListener('enterFrame', function (e) {
   let frame = ~~e.currentTime;
   if (frame === framesCounter) {
@@ -139,7 +138,4 @@ player.addEventListener('enterFrame', function (e) {
       break;
   }
 });
-
-
-
 // End анимация
