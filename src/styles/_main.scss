@@ -629,6 +629,17 @@ h3 {
   }
 }
 
+.section-baner1,
+.section-baner2 {
+  a {
+    display: block;
+  }
+  img {
+    max-width: 100%;
+    width: 100%;
+  }
+}
+
 @media (min-width: 1200px) {
   .container {
     max-width: 1330px;
