@@ -1,0 +1,160 @@
+.modal-header {
+  padding: 24px;
+  border: 0;
+  .close {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    height: 40px;
+    width: 40px;
+    background: url($imgsvg + 'close-black.svg') no-repeat center center;
+
+    span {
+      display: none;
+    }
+  }
+}
+
+.reg-head {
+  color: $primary;
+  font-style: italic;
+  font-weight: bold;
+  text-align: center;
+  font-size: 56px;
+  line-height: 100%;
+  margin-bottom: 40px;
+  letter-spacing: 0.41px;
+}
+
+.reg-list {
+  list-style: none;
+  padding: 0;
+
+  li {
+    position: relative;
+    padding-left: 48px;
+    font-size: 24px;
+    margin-bottom: 16px;
+
+    &:nth-child(1),
+    &:nth-child(2),
+    &:nth-child(3) {
+      &::before {
+        content: ' ';
+        position: absolute;
+        left: 0;
+        top: 4px;
+        width: 24px;
+        height: 24px;
+        display: block;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &:nth-child(1) {
+      &::before {
+        background-image: url($imgsvg + 'rocket-red.svg');
+      }
+    }
+    &:nth-child(2) {
+      &::before {
+        background-image: url($imgsvg + 'logo-circle.svg');
+      }
+    }
+    &:nth-child(3) {
+      &::before {
+        background-image: url($imgsvg + 'doc.svg');
+      }
+    }
+  }
+}
+
+.modal-footer {
+  padding: 24px;
+  border: 0;
+}
+
+.reg-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  a {
+    font-size: 17px;
+    text-decoration: underline;
+    color: $primary;
+    font-weight: bold;
+    display: inline-block;
+    height: 60px;
+    margin-top: 12px;
+    line-height: 60px;
+  }
+
+  .btn {
+    margin: 0;
+  }
+}
+
+.modal-body {
+  padding: 0;
+}
+
+.reg-capha {
+  padding: 40px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.reg-form {
+  margin-top: 40px;
+  padding: 40px 24px;
+  background: $lightBackground;
+
+  .form-group {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.reg-footer {
+  a,
+  .btn {
+    max-width: 400px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.reg-capha,
+.reg-list {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 400px;
+}
+
+
+@media (max-width: 480px) {
+  .reg-head {
+    font-size: 48px;
+  }
+
+  .modal-footer,
+  .modal-header {
+    padding: 15px;
+  }
+
+  .reg-list {
+    li {
+      padding-left: 35px;
+    }
+  }
+
+  .reg-form {
+    padding: 15px;
+  }
+}

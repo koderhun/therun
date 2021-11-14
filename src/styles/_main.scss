@@ -4,8 +4,9 @@ body {
 }
 
 .header {
-  background: $primary;
+  background: $brand-black;
   color: white;
+
   .container {
     height: 70px;
     display: flex;
@@ -14,9 +15,40 @@ body {
   }
 }
 
+.logo {
+  max-width: 32px;
+
+  img {
+    max-width: 100%;
+  }
+}
+
+label {
+  padding-left: 24px;
+  font-size: 17px;
+  line-height: 20px;
+  letter-spacing: 0.41px;
+}
+
+.form-control {
+  border: 3px solid #8a8a8f;
+  box-sizing: border-box;
+  border-radius: 13px;
+  font-size: 20px;
+  letter-spacing: 0.41px;
+  padding-left: 24px;
+  padding-right: 24px;
+  height: 60px;
+  color: black;
+
+  &:focus {
+    border-color: $primary;
+  }
+}
+
 .menu {
   width: 100%;
-  max-width: 580px;
+  max-width: 880px;
   display: flex;
   justify-content: space-between;
 
@@ -153,6 +185,24 @@ body {
   }
 }
 
+.btn-primary {
+  &:disabled {
+    background: $brand-darkgray;
+    border-color: $brand-darkgray;
+    opacity: 1;
+  }
+}
+
+.btn-lg,
+.btn-group-lg > .btn {
+  max-width: 250px;
+  width: 100%;
+  height: 56px;
+  line-height: 36px;
+  border-radius: 13px;
+  font-weight: bold;
+}
+
 .screenshot {
   padding-top: 58px;
   &::before {
@@ -228,11 +278,10 @@ h3.section-header {
 
 .transport-list {
   display: flex;
-  justify-content:center;
+  justify-content: center;
   align-items: center;
   margin-top: 130px;
   flex-wrap: wrap;
-
 
   img {
     max-width: 100%;
@@ -579,7 +628,7 @@ h3 {
 }
 
 .section13 {
-  background: $primary;
+  background: $brand-black;
   color: white;
 
   .container {
@@ -629,11 +678,85 @@ h3 {
   }
 }
 
-.section-baner1,
-.section-baner2 {
-  a {
-    display: block;
+.section-baner1 {
+  max-height: 500px;
+  height: 100%;
+
+  .container {
+    padding-top: 0;
+    padding-bottom: 0;
   }
+
+  img {
+    margin: auto;
+    max-height: 500px;
+    width: auto;
+    height: 500px;
+  }
+
+  .carousel-item {
+    width: 100%;
+  }
+  .carousel-control-next,
+  .carousel-control-prev {
+    display: flex;
+  }
+}
+
+.carousel-control-next,
+.carousel-control-prev {
+  width: 40px;
+  height: 40px;
+  background: $primary;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: calc(50% - 20px);
+}
+
+.carousel-control-next {
+  margin-right: 24px;
+}
+
+.carousel-control-prev {
+  margin-left: 24px;
+}
+
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  background: url($imgsvg + 'arrow-white.svg') no-repeat 2px center;
+}
+
+.carousel-control-next-icon {
+  transform: rotate(180deg);
+}
+
+.carousel-indicators li {
+  width: 16px;
+  height: 16px;
+  background: $brand-darkgray;
+  border-radius: 50%;
+  margin: 0 12px;
+  padding: 0;
+  opacity: 1;
+  box-sizing: border-box;
+  border: 0;
+}
+
+.carousel-caption {
+  bottom: 40px;
+}
+
+.carousel-indicators .active {
+  background: $primary;
+}
+
+
+
+.section-baner2 {
   img {
     max-width: 100%;
     width: 100%;
@@ -656,9 +779,12 @@ h3 {
   .roadmap-content {
     display: none;
   }
+  .modal-content {
+    min-width: 600px;
+  }
 }
 
-@media (max-width: 1300px) {
+@media (max-width: 1380px) {
   .section7 {
     .container {
       min-height: auto;
@@ -718,8 +844,16 @@ h3 {
   }
 }
 
-@media (max-width: 768px) {
+//menu styl
+@media (min-width: 880px) {
+  .menu {
+    .btn-primary {
+      margin-top: -3px;
+    }
+  }
+}
 
+@media (max-width: 880px) {
   .header {
     .menu,
     .widget {
@@ -732,48 +866,19 @@ h3 {
     }
   }
 
-  .price-list {
-    flex-direction: column;
-  }
-
-  .price-card {
-    width: 100%;
-    margin-bottom: 40px;
-  }
-
-  .piplebox {
-    .row {
-      flex-direction: column;
-
-      &:nth-child(2) {
-        margin-top: 0;
+  .menu-item {
+    &--social {
+      img {
+        max-width: 24px;
       }
     }
-
-    .col {
-      margin-bottom: 40px;
-    }
   }
 
-  .h3.section-header, h3.section-header {
-    font-size: 32px;
-  }
-
-  .gray-center {
-    padding: 40px;
-
+  .logo {
+    max-width: 32px;
     img {
       max-width: 100%;
-      margin-bottom: 20px;
     }
-  }
-
-  .roadmap {
-    background: none;
-  }
-
-  .roadmap-list {
-    display: none;
   }
 
   .btn-burger {
@@ -803,7 +908,7 @@ h3 {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    background: $primary;
+    background: $brand-black;
     z-index: 10;
     padding: 15px;
     padding-bottom: 40px;
@@ -874,6 +979,53 @@ h3 {
         background-image: url($imgsvg + 'close-white.svg');
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .price-list {
+    flex-direction: column;
+  }
+
+  .price-card {
+    width: 100%;
+    margin-bottom: 40px;
+  }
+
+  .piplebox {
+    .row {
+      flex-direction: column;
+
+      &:nth-child(2) {
+        margin-top: 0;
+      }
+    }
+
+    .col {
+      margin-bottom: 40px;
+    }
+  }
+
+  .h3.section-header,
+  h3.section-header {
+    font-size: 32px;
+  }
+
+  .gray-center {
+    padding: 40px;
+
+    img {
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+  }
+
+  .roadmap {
+    background: none;
+  }
+
+  .roadmap-list {
+    display: none;
   }
 
   .baner1-head {
@@ -961,7 +1113,7 @@ h3 {
       font-size: 32px;
     }
   }
-  .roadmap-content{
+  .roadmap-content {
     font-size: 17px;
     font-style: normal;
     color: black;
