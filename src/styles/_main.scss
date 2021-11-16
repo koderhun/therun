@@ -13,6 +13,10 @@ body {
     justify-content: space-between;
     align-items: center;
   }
+
+  .logo {
+    margin-right: 15px;
+  }
 }
 
 .logo {
@@ -55,6 +59,7 @@ label {
   a {
     color: white;
     text-decoration: none;
+    font-weight: bold;
     &:hover {
       color: white;
     }
@@ -108,7 +113,7 @@ label {
 }
 
 .baner-content {
-  margin-top: 40px;
+  margin-top: 100px;
 }
 
 .logo-red {
@@ -181,11 +186,22 @@ label {
   height: 50px;
   border-radius: 13px;
   margin-top: 25px;
+  background: transparent;
+  color: $primary;
+  border: 3px solid $primary;
+
+  &:hover,
+  &:focus {
+    border-color: $primary;
+    color: $primary;
+    background: transparent;
+    opacity: 0.8;
+  }
 
   &:before {
     content: '';
     display: block;
-    background: url($imgsvg + 'playmarket.svg') no-repeat center center;
+    background: url($imgsvg + 'play-red.svg') no-repeat center center;
     width: 24px;
     height: 24px;
     background-size: 100%;
@@ -286,7 +302,7 @@ h3.section-header {
 
 .transport-list {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: self-end;
   margin-top: 130px;
   flex-wrap: wrap;
@@ -359,11 +375,16 @@ h3.section-header {
   &__img {
     margin-bottom: 50px;
 
+    &--duble {
+      img {
+        height: 100px;
+      }
+    }
+
     img {
       display: block;
       max-width: 100%;
       width: auto;
-      height: 100px;
       margin: auto;
       margin-bottom: 24px;
     }
@@ -443,10 +464,17 @@ h3.section-header {
 }
 
 .section8 {
+  overflow: hidden;
   background: $brand-gray;
 
   .section-header {
     margin-bottom: 60px;
+  }
+  .container {
+    > *:not(.graph) {
+      position: relative;
+      z-index: 2;
+    }
   }
 }
 
@@ -458,9 +486,27 @@ h3.section-header {
     display: block;
   }
   &--circle {
-    margin-top: 60px;
-    margin-bottom: 40px;
+    margin-top: 40px;
+    margin-bottom: 100px;
+    position: relative;
+    height: 1066px;
+
+    &::before {
+      content: ' ';
+      position: absolute;
+      background: url($imgsvg + 'gtr-full.svg') no-repeat center;
+      background-size: auto 100%;
+      background-position: right;
+      width: 3644px;
+      height: 1066px;
+      right: 0;
+      top: 0px;
+      z-index: 1;
+    }
+
     .graph-center {
+      position: relative;
+      z-index: 1;
       margin: auto;
       max-width: 870px;
     }
@@ -546,6 +592,8 @@ h3.section-header {
     width: 100%;
     &--1 {
       max-width: 100%;
+      max-width: 300px;
+      margin-top: 5px;
     }
   }
 
@@ -696,7 +744,6 @@ h3 {
   }
 }
 
-
 .section12 {
   background: $brand-gray;
 
@@ -772,8 +819,6 @@ h3 {
   }
 }
 
-
-
 .check {
   cursor: pointer;
 
@@ -808,7 +853,6 @@ h3 {
 }
 
 .section-baner1 {
-
   .container {
     padding-top: 0;
     padding-bottom: 0;
@@ -909,7 +953,18 @@ img {
   }
   .roadmap-list3 {
     margin-top: 14px;
-  }  
+  }
+}
+
+@media (max-width: 1200px) {
+  .graph {
+    &--circle {
+      height: 790px;
+      &::before {
+        height: 790px;
+      }
+    }
+  }
 }
 
 @media (max-width: 1380px) {
@@ -958,6 +1013,21 @@ img {
 }
 
 @media (max-width: 992px) {
+  .graph {
+    &--circle {
+      height: 500px;
+
+      &::before {
+        display: block;
+        height: 500px;
+        position: relative;
+        left: 0;
+        width: 100%;
+        background: url($imgsvg + 'graph2.svg') no-repeat center / 100%;
+      }
+    }
+  }
+
   .header {
     .container {
       max-width: 100%;
@@ -1325,6 +1395,7 @@ img {
 
   .screenshot {
     &::before {
+      background-size: auto 100%;
       height: 380px;
       margin-bottom: 40px;
     }
