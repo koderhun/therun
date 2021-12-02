@@ -1375,6 +1375,11 @@ img {
       margin: auto;
     }
   }
+  .menu-burger {
+    &__content {
+      height: auto;
+    }
+  }
 }
 
 @media (max-height: 600px) and (max-width: 768px) {
